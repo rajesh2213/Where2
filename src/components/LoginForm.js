@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../App.css'
 import './LoginForm.css';
-
+import { Link } from 'react-router-dom';
 
 
 class LoginForm extends Component {
@@ -54,13 +54,34 @@ console.log(JSON.parse(localStorage.getItem('formData')))
 console.log(l1);
 
  if(password =="qwertyui"||password =="admin"||password =="qwert"||password =="qwerty"||password =="qwertyu"||(password == l3&&Username == l1)){
-   window.location.replace('http://localhost:3000/flights');
+  // window.location.replace('http://localhost:3000/flights');
    alert("Successfully LoggedIn")
+  
+return(
+
+<Link
+                to='/flights'
+                className='nav-links'
+              >
+                Flights
+              </Link>
+
+);
+
  }
- else{
+
+
+ else
+ {
 alert("Incorrect Password or Username")
+
  }
-    
+  
+ 
+
+
+
+
 }
 //22222222222222222222222222222222222222
 _validateForm2 = (e) => {
